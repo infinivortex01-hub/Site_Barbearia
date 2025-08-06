@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harry Barber</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .hero {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1585747860715-ebba7bca9fe2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .barber-card:hover img {
+            transform: scale(1.05);
+        }
+        
+        .testimonial-card {
+            transition: all 0.3s ease;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        
+        .booking-form {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1595475207225-428b62bda831?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-100">
+    <!-- Header/Navbar -->
+    <header class="bg-black text-white sticky top-0 z-50 shadow-lg">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <i class="fas fa-cut text-amber-500 text-2xl mr-2"></i>
+                <h1 class="text-2xl font-bold">HARRY <span class="text-amber-500">BARBER</span></h1>
+            </div>
+            
+            <nav class="hidden md:flex space-x-8">
+                <a href="#home" class="hover:text-amber-500 transition">Home</a>
+                <a href="#services" class="hover:text-amber-500 transition">Serviços</a>
+                <a href="#gallery" class="hover:text-amber-500 transition">Galeria</a>
+                <a href="#contact" class="hover:text-amber-500 transition">Contato</a>
+            </nav>
+            
+            <div class="hidden md:block">
+                <a href="#booking" class="bg-amber-500 hover:bg-amber-600 text-black font-bold py-2 px-6 rounded-full transition">Agendar</a>
+            </div>
+            
+            <button id="mobile-menu-button" class="md:hidden text-2xl">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-black py-4 px-4">
+            <div class="flex flex-col space-y-4">
+                <a href="#home" class="hover:text-amber-500 transition">Home</a>
+                <a href="#services" class="hover:text-amber-500 transition">Serviços</a>
+                <a href="#gallery" class="hover:text-amber-500 transition">Galeria</a>
+                <a href="#contact" class="hover:text-amber-500 transition">Contato</a>
+                <a href="#booking" class="bg-amber-500 hover:bg-amber-600 text-black font-bold py-2 px-6 rounded-full text-center transition">Agendar</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero min-h-screen flex items-center justify-center text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">HARRY <span class="text-amber-500">BARBER</span></h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-2xl mx-auto">Corte, estilo e tradição em um ambiente exclusivo para homens que valorizam qualidade e sofisticação.</p>
+            <div class="flex justify-center">
+                <a href="#services" class="bg-amber-500 hover:bg-amber-600 text-black font-bold py-3 px-8 rounded-full transition">
+                    NOSSOS SERVIÇOS
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8">
+                    <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1476&q=80" 
+                         alt="Barbearia Harry Barber" 
+                         class="rounded-lg shadow-xl w-full h-auto">
+                </div>
+                <div class="md:w-1/2">
+                    <h2 class="text-3xl font-bold mb-6">SOBRE A <span class="text-amber-500">HARRY BARBER</span></h2>
+                    <p class="text-gray-700 mb-4">Fundada em 2015, a Harry Barber se estabeleceu como referência em cuidados masculinos, oferecendo serviços de alta qualidade em um ambiente descontraído e sofisticado.</p>
+                    <p class="text-gray-700 mb-6">Nossa equipe de barbeiros profissionais está comprometida em proporcionar a melhor experiência, combinando técnicas tradicionais com as últimas tendências do mercado.</p>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-amber-500 mr-2 text-xl"></i>
+                            <span>Profissionais qualificados</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-amber-500 mr-2 text-xl"></i>
+                            <span>Produtos premium</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-amber-500 mr-2 text-xl"></i>
+                            <span>Ambiente climatizado</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-amber-500 mr-2 text-xl"></i>
+                            <span>Atendimento personalizado</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">NOSSOS <span class="text-amber-500">SERVIÇOS</span></h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Oferecemos uma variedade de serviços para cuidar do seu visual e bem-estar</p>
+            </div>
+            
+            <!-- Serviços Visíveis -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-md service-card transition duration-300">
+                    <img src="https://images.unsplash.com/photo-1521590832167-bdc86b300aa2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Corte de Cabelo" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-4">
+                            <h3 class="text-xl font-bold">Corte</h3>
+                            <span class="bg-amber-100 text-amber-800 py-1 px-3 rounded-full text-sm font-bold">R$ 30,00</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Corte profissional com técnicas modernas e acabamento perfeito para qualquer estilo.</p>
+                        <a href="#booking" class="text-amber-500 hover:text-amber-600 font-bold flex items-center">Agendar <i class="fas fa-arrow-right ml-2"></i></a>
+                    </div>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-md service-card transition duration-300">
+                    <img src="https://images.unsplash.com/photo-1600334129128-685c5582fd35?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Corte + Sombrancelha" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-4">
+                            <h3 class="text-xl font-bold">Corte + Sombrancelha</h3>
+                            <span class="bg-amber-100 text-amber-800 py-1 px-3 rounded-full text-sm font-bold">R$ 35,00</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Pacote completo com corte de cabelo e modelagem de sobrancelhas.</p>
+                        <a href="#booking" class="text-amber-500 hover:text-amber-600 font-bold flex items-center">Agendar <i class="fas fa-arrow-right ml-2"></i></a>
+                    </div>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-md service-card transition duration-300">
+                    <img src="https://images.unsplash.com/photo-1605497788044-5a32c7078486?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Barba" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-4">
+                            <h3 class="text-xl font-bold">Barba</h3>
+                            <span class="bg-amber-100 text-amber-800 py-1 px-3 rounded-full text-sm font-bold">R$ 25,00</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Modelagem e tratamento completo para sua barba, com toalha quente e produtos premium.</p>
+                        <a href="#booking" class="text-amber-500 hover:text-amber-600 font-bold flex items-center">Agendar <i class="fas fa-arrow-right ml-2"></i></a>
+                    </div>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-md service-card transition duration-300">
+                    <img src="https://images.unsplash.com/photo-1600334129128-685c5582fd35?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Corte + Barba" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-4">
+                            <h3 class="text-xl font-bold">Corte + Barba</h3>
+                            <span class="bg-amber-100 text-amber-800 py-1 px-3 rounded-full text-sm font-bold">R$ 50,00</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Pacote completo com corte de cabelo e barba, incluindo tratamento com produtos exclusivos.</p>
+                        <a href="#booking" class="text-amber-500 hover:text-amber-600 font-bold flex items-center">Agendar <i class="fas fa-arrow-right ml-2"></i></a>
+                    </div>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-md service-card transition duration-300">
+                    <img src="https://images.unsplash.com/photo-1595475207225-428b62bda831?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Corte + Skin Care" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-4">
+                            <h3 class="text-xl font-bold">Corte + Skin Care</h3>
+                            <span class="bg-amber-100 text-amber-800 py-1 px-3 rounded-full text-sm font-bold">R$ 45,00</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Corte completo com tratamento facial para pele saudável e renovada.</p>
+                        <a href="#booking" class="text-amber-500 hover:text-amber-600 font-bold flex items-center">Agendar <i class="fas fa-arrow-right ml-2"></i></a>
+                    </div>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-md service-card transition duration-300">
+                    <img src="https://images.unsplash.com/photo-1585747860715-ebba7bca9fe2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Corte + Hidratação" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-4">
+                            <h3 class="text-xl font-bold">Corte + Hidratação</h3>
+                            <span class="bg-amber-100 text-amber-800 py-1 px-3 rounded-full text-sm font-bold">R$ 45,00</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Corte com hidratação profunda para cabelos ressecados, devolvendo vitalidade e brilho.</p>
+                        <a href="#booking" class="text-amber-500 hover:text-amber-600 font-bold flex items-center">Agendar <i class="fas fa-arrow-right ml-2"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Botão para mostrar/ocultar serviços extras -->
+            <div id="hidden-services" class="mt-12 hidden">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Skin Care -->
+                    <div class="bg-white rounded-lg overflow-hidden shadow-md service-card transition duration-300">
+                        <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Skin Care" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <div class="flex justify-between items-center mb-4">
+                                <h3 class="text-xl font-bold">Skin Care</h3>
+                                <span class="bg-amber-100 text-amber-800 py-1 px-3 rounded-full text-sm font-bold">R$ 20,00</span>
+                            </div>
+                            <p class="text-gray-600 mb-4">Tratamento facial para revitalizar e hidratar a pele.</p>
+                            <a href="#booking" class="text-amber-500 hover:text-amber-600 font-bold flex items-center">Agendar <i class="fas fa-arrow-right ml-2"></i></a>
+                        </div>
+                    </div>
+                    <!-- Hidratação -->
+                    <div class="bg-white rounded-lg overflow-hidden shadow-md service-card transition duration-300">
+                        <img src="https://images.unsplash.com/photo-1585747860715-ebba7bca9fe2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Hidratação" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <div class="flex justify-between items-center mb-4">
+                                <h3 class="text-xl font-bold">Hidratação</h3>
+                                <span class="bg-amber-100 text-amber-800 py-1 px-3 rounded-full text-sm font-bold">R$ 20,00</span>
+                            </div>
+                            <p class="text-gray-600 mb-4">Hidratação capilar para cabelos mais saudáveis e brilhantes.</p>
+                            <a href="#booking" class="text-amber-500 hover:text-amber-600 font-bold flex items-center">Agendar <i class="fas fa-arrow-right ml-2"></i></a>
+                        </div>
+                    </div>
+                    <!-- Mensal 2 cortes -->
+                    <div class="bg-white rounded-lg overflow-hidden shadow-md service-card transition duration-300">
+                        <img src="https://images.unsplash.com/photo-1521590832167-bdc86b300aa2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Mensal 2 cortes" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <div class="flex justify-between items-center mb-4">
+                                <h3 class="text-xl font-bold">Mensal 2 cortes</h3>
+                                <span class="bg-amber-100 text-amber-800 py-1 px-3 rounded-full text-sm font-bold">R$ 50,00</span>
+                            </div>
+                            <p class="text-gray-600 mb-4">Pacote mensal com direito a 2 cortes de cabelo.</p>
+                            <a href="#booking" class="text-amber-500 hover:text-amber-600 font-bold flex items-center">Agendar <i class="fas fa-arrow-right ml-2"></i></a>
+                        </div>
+                    </div>
+                    <!-- Mensal 3 cortes -->
+                    <div class="bg-white rounded-lg overflow-hidden shadow-md service-card transition duration-300">
+                        <img src="https://images.unsplash.com/photo-1521590832167-bdc86b300aa2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Mensal 3 cortes" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <div class="flex justify-between items-center mb-4">
+                                <h3 class="text-xl font-bold">Mensal 3 cortes</h3>
+                                <span class="bg-amber-100 text-amber-800 py-1 px-3 rounded-full text-sm font-bold">R$ 75,00</span>
+                            </div>
+                            <p class="text-gray-600 mb-4">Pacote mensal com direito a 3 cortes de cabelo.</p>
+                            <a href="#booking" class="text-amber-500 hover:text-amber-600 font-bold flex items-center">Agendar <i class="fas fa-arrow-right ml-2"></i></a>
+                        </div>
+                    </div>
+                    <!-- Mensal ilimitado -->
+                    <div class="bg-white rounded-lg overflow-hidden shadow-md service-card transition duration-300">
+                        <img src="https://images.unsplash.com/photo-1521590832167-bdc86b300aa2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Mensal ilimitado" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <div class="flex justify-between items-center mb-4">
+                                <h3 class="text-xl font-bold">Mensal ilimitado</h3>
+                                <span class="bg-amber-100 text-amber-800 py-1 px-3 rounded-full text-sm font-bold">R$ 100,00</span>
+                            </div>
+                            <p class="text-gray-600 mb-4">Pacote mensal com cortes ilimitados.</p>
+                            <a href="#booking" class="text-amber-500 hover:text-amber-600 font-bold flex items-center">Agendar <i class="fas fa-arrow-right ml-2"></i></a>
+                        </div>
+                    </div>
+                    <!-- Luzes + corte -->
+                    <div class="bg-white rounded-lg overflow-hidden shadow-md service-card transition duration-300">
+                        <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Luzes + corte" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <div class="flex justify-between items-center mb-4">
+                                <h3 class="text-xl font-bold">Luzes + corte</h3>
+                                <span class="bg-amber-100 text-amber-800 py-1 px-3 rounded-full text-sm font-bold">R$ 100,00</span>
+                            </div>
+                            <p class="text-gray-600 mb-4">Transforme seu visual com luzes e corte moderno.</p>
+                            <a href="#booking" class="text-amber-500 hover:text-amber-600 font-bold flex items-center">Agendar <i class="fas fa-arrow-right ml-2"></i></a>
+                        </div>
+                    </div>
+                    <!-- Platinado + corte -->
+                    <div class="bg-white rounded-lg overflow-hidden shadow-md service-card transition duration-300">
+                        <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Platinado + corte" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <div class="flex justify-between items-center mb-4">
+                                <h3 class="text-xl font-bold">Platinado + corte</h3>
+                                <span class="bg-amber-100 text-amber-800 py-1 px-3 rounded-full text-sm font-bold">R$ 125,00</span>
+                            </div>
+                            <p class="text-gray-600 mb-4">Cabelo platinado com corte estiloso para um visual marcante.</p>
+                            <a href="#booking" class="text-amber-500 hover:text-amber-600 font-bold flex items-center">Agendar <i class="fas fa-arrow-right ml-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Botão para mostrar/ocultar serviços extras -->
+            <div class="text-center mt-8">
+                <button id="toggle-services" class="bg-amber-500 hover:bg-amber-600 text-black font-bold py-2 px-6 rounded-full transition">
+                    Mais Serviços
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">GALERIA DE <span class="text-amber-500">TRABALHOS</span></h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Alguns dos nossos melhores trabalhos</p>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                <div class="overflow-hidden rounded-lg shadow-md">
+                    <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1476&q=80" 
+                         alt="Trabalho 1" 
+                         class="w-full h-64 object-cover hover:scale-105 transition duration-500 cursor-pointer">
+                </div>
+                <div class="overflow-hidden rounded-lg shadow-md">
+                    <img src="https://images.unsplash.com/photo-1521590832167-bdc86b300aa2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                         alt="Trabalho 2" 
+                         class="w-full h-64 object-cover hover:scale-105 transition duration-500 cursor-pointer">
+                </div>
+                <div class="overflow-hidden rounded-lg shadow-md">
+                    <img src="https://images.unsplash.com/photo-1605497788044-5a32c7078486?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                         alt="Trabalho 3" 
+                         class="w-full h-64 object-cover hover:scale-105 transition duration-500 cursor-pointer">
+                </div>
+                <div class="overflow-hidden rounded-lg shadow-md">
+                    <img src="https://images.unsplash.com/photo-1600334129128-685c5582fd35?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                         alt="Trabalho 4" 
+                         class="w-full h-64 object-cover hover:scale-105 transition duration-500 cursor-pointer">
+                </div>
+                <div class="overflow-hidden rounded-lg shadow-md">
+                    <img src="https://images.unsplash.com/photo-1585747860715-ebba7bca9fe2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                         alt="Trabalho 5" 
+                         class="w-full h-64 object-cover hover:scale-105 transition duration-500 cursor-pointer">
+                </div>
+                <div class="overflow-hidden rounded-lg shadow-md">
+                    <img src="https://images.unsplash.com/photo-1595475207225-428b62bda831?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                         alt="Trabalho 6" 
+                         class="w-full h-64 object-cover hover:scale-105 transition duration-500 cursor-pointer">
+                </div>
+                <div class="overflow-hidden rounded-lg shadow-md">
+                    <img src="https://images.unsplash.com/photo-1560253023-3ec5d502959f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                         alt="Trabalho 7" 
+                         class="w-full h-64 object-cover hover:scale-105 transition duration-500 cursor-pointer">
+                </div>
+                <div class="overflow-hidden rounded-lg shadow-md">
+                    <img src="https://images.unsplash.com/photo-1583864697781-a880bc34c7f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" 
+                         alt="Trabalho 8" 
+                         class="w-full h-64 object-cover hover:scale-105 transition duration-500 cursor-pointer">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">DEPOIMENTOS DE <span class="text-amber-500">CLIENTES</span></h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">O que nossos clientes dizem sobre nós</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-gray-100 p-8 rounded-lg testimonial-card">
+                    <div class="flex items-center mb-4">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" 
+                             alt="Cliente 1" 
+                             class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold">Marcos Antônio</h4>
+                            <div class="flex text-amber-500">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">"Sou cliente da Harry Barber há 3 anos e nunca fiquei insatisfeito. Os profissionais são extremamente qualificados e o ambiente é muito agradável. Recomendo!"</p>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="bg-gray-100 p-8 rounded-lg testimonial-card">
+                    <div class="flex items-center mb-4">
+                        <img src="https://randomuser.me/api/portraits/men/44.jpg" 
+                             alt="Cliente 2" 
+                             class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold">Ricardo Silva</h4>
+                            <div class="flex text-amber-500">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">"Melhor barbearia da região! Corte sempre impecável, atendimento de primeira e ainda tem aquela cervejinha gelada enquanto espera. Vale cada centavo!"</p>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="bg-gray-100 p-8 rounded-lg testimonial-card">
+                    <div class="flex items-center mb-4">
+                        <img src="https://randomuser.me/api/portraits/men/67.jpg" 
+                             alt="Cliente 3" 
+                             class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold">Gustavo Pereira</h4>
+                            <div class="flex text-amber-500">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">"Depois que conheci a Harry Barber nunca mais fui em outra barbearia. O cuidado com os detalhes e a atenção dos barbeiros faz toda a diferença. Meu visual nunca foi tão bom!"</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section id="booking" class="booking-form py-16 text-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto bg-black bg-opacity-70 rounded-lg p-8">
+                <div class="text-center mb-8">
+                    <h2 class="text-3xl font-bold mb-2">AGENDE SEU <span class="text-amber-500">HORÁRIO</span></h2>
+                    <p class="text-gray-300">Preencha o formulário abaixo e reserve seu horário com nossos barbeiros</p>
+                </div>
+                
+                <form class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label for="name" class="block mb-2">Nome Completo</label>
+                        <input type="text" id="name" 
+                               class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500">
+                    </div>
+                    
+                    <div>
+                        <label for="phone" class="block mb-2">Telefone</label>
+                        <input type="tel" id="phone" 
+                               class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500">
+                    </div>
+                    
+                    <div>
+                        <label for="email" class="block mb-2">E-mail</label>
+                        <input type="email" id="email" 
+                               class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500">
+                    </div>
+                    
+                    <div>
+                        <label for="service" class="block mb-2">Serviço</label>
+                        <select id="service" 
+                                class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500">
+                            <option value="">Selecione um serviço</option>
+                            <option value="corte">Corte de Cabelo - R$ 50</option>
+                            <option value="barba">Barba Completa - R$ 40</option>
+                            <option value="corte+barba">Corte + Barba - R$ 80</option>
+                            <option value="hidratacao">Hidratação Capilar - R$ 60</option>
+                            <option value="pigmentacao">Pigmentação de Barba - R$ 70</option>
+                            <option value="sobrancelha">Design de Sobrancelhas - R$ 30</option>
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <label for="date" class="block mb-2">Data</label>
+                        <input type="date" id="date" 
+                               class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500">
+                    </div>
+                    
+                    <div>
+                        <label for="time" class="block mb-2">Horário</label>
+                        <select id="time" 
+                                class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500">
+                            <option value="">Selecione um horário</option>
+                            <option value="08:00">08:00</option>
+                            <option value="09:00">09:00</option>
+                            <option value="10:00">10:00</option>
+                            <option value="11:00">11:00</option>
+                            <option value="13:00">13:00</option>
+                            <option value="14:00">14:00</option>
+                            <option value="15:00">15:00</option>
+                            <option value="16:00">16:00</option>
+                            <option value="17:00">17:00</option>
+                            <option value="18:00">18:00</option>
+                        </select>
+                    </div>
+                    
+                    <div class="md:col-span-2">
+                        <label for="message" class="block mb-2">Mensagem (Opcional)</label>
+                        <textarea id="message" rows="4" 
+                                  class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500"></textarea>
+                    </div>
+                    
+                    <div class="md:col-span-2 text-center">
+                        <button type="submit" 
+                                class="bg-amber-500 hover:bg-amber-600 text-black font-bold py-3 px-8 rounded-full transition">AGENDAR HORÁRIO</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">ENTRE EM <span class="text-amber-500">CONTATO</span></h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Estamos à disposição para tirar suas dúvidas</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-lg shadow-md text-center">
+                    <div class="bg-amber-100 text-amber-800 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-map-marker-alt text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Endereço</h3>
+                    <p class="text-gray-600">
+    Rua Lamartine Babo, 99<br>
+    Vila Tesouro, São José dos Campos - SP<br>
+    CEP: 12221-550
+</p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-lg shadow-md text-center">
+                    <div class="bg-amber-100 text-amber-800 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-phone-alt text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Telefone</h3>
+                    <p class="text-gray-600">(11) 9999-9999<br>(11) 8888-8888</p>
+                    <p class="text-gray-600 mt-2">WhatsApp: (11) 99999-9999</p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-lg shadow-md text-center">
+                    <div class="bg-amber-100 text-amber-800 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-envelope text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">E-mail</h3>
+                    <p class="text-gray-600">contato@harrybarber.com.br<br>atendimento@harrybarber.com.br</p>
+                    <div class="flex justify-center space-x-4 mt-4">
+                        <a href="#" class="text-gray-600 hover:text-amber-500"><i class="fab fa-instagram text-2xl"></i></a>
+                        <a href="#" class="text-gray-600 hover:text-amber-500"><i class="fab fa-facebook text-2xl"></i></a>
+                        <a href="#" class="text-gray-600 hover:text-amber-500"><i class="fab fa-whatsapp text-2xl"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 bg-white rounded-lg shadow-md overflow-hidden">
+                <iframe src="https://www.google.com/maps?q=Rua+Lamartine+Babo,+99,+Vila+Tesouro,+São+José+dos+Campos,+SP,+12221-550&output=embed"
+                        width="100%" 
+                        height="450" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center mb-4 md:mb-0">
+                    <i class="fas fa-cut text-amber-500 text-2xl mr-2"></i>
+                    <h2 class="text-2xl font-bold">HARRY <span class="text-amber-500">BARBER</span></h2>
+                </div>
+                
+                <div class="flex space-x-6 mb-4 md:mb-0">
+                    <a href="#" class="hover:text-amber-500 transition"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="hover:text-amber-500 transition"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="hover:text-amber-500 transition"><i class="fab fa-whatsapp"></i></a>
+                </div>
+                
+                <div class="text-center md:text-right">
+                    <p>&copy; 2025 InfiniVortex. Todos os direitos reservados.</p>
+                    <p class="text-gray-400 text-sm">Desenvolvido com <i class="fas fa-heart text-amber-500"></i> por equipe InfiniVortex</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 bg-amber-500 text-black w-12 h-12 rounded-full flex items-center justify-center shadow-lg transition opacity-0 invisible">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Função para alternar o menu mobile - mostra/esconde o menu quando o botão é clicado
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Função do botão "Voltar ao Topo" - aparece quando o usuário rola a página para baixo
+        const backToTopButton = document.getElementById('back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+                backToTopButton.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopButton.classList.remove('opacity-100', 'visible');
+                backToTopButton.classList.add('opacity-0', 'invisible');
+            }
+        });
+        
+        // Quando clicado, rola suavemente para o topo da página
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Função para mostrar/ocultar serviços adicionais
+        const toggleServicesButton = document.getElementById('toggle-services');
+        const hiddenServices = document.getElementById('hidden-services');
+
+        toggleServicesButton.addEventListener('click', () => {
+            const servicePairs = hiddenServices.querySelectorAll('.hidden-service-pair');
+            if (hiddenServices.classList.contains('hidden')) {
+                // Mostrar serviços ocultos
+                hiddenServices.classList.remove('hidden');
+                servicePairs.forEach(pair => pair.classList.remove('hidden'));
+                toggleServicesButton.textContent = 'Menos Serviços';
+            } else {
+                // Ocultar serviços adicionais
+                hiddenServices.classList.add('hidden');
+                servicePairs.forEach(pair => pair.classList.add('hidden'));
+                toggleServicesButton.textContent = 'Mais Serviços';
+            }
+        });
+        
+        // Scroll suave para links âncora (seções da página)
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80, // Ajusta para considerar o header fixo
+                        behavior: 'smooth' // Animação suave
+                    });
+                    
+                    // Fecha o menu mobile se estiver aberto
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+        
+        // Manipulação do formulário de agendamento
+        const bookingForm = document.querySelector('form');
+        if (bookingForm) {
+            bookingForm.addEventListener('submit', function(e) {
+                e.preventDefault(); // Impede o envio padrão do formulário
+                
+                // Aqui normalmente enviaríamos os dados para um servidor
+                // Neste exemplo, apenas mostramos um alerta
+                alert('Agendamento enviado com sucesso! Entraremos em contato para confirmar.');
+                this.reset(); // Limpa os campos do formulário
+            });
+        }
+    </script>
+</body>
+</html>
